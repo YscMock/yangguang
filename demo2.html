@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>定位offset和position</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		body{margin: 10px;}
+	</style>
+	<script src="js/jquery-1.12.3.js"></script>
+	<script>
+		$(function(){
+			/*offset(返回或设置匹配元素相对于文档的偏移（位置）)和position获取匹配元素相对父元素的偏移。
+			1，使用position()方法时事实上是把该元素当绝对定位来处理，获取的是该元素相当于最近的一个拥有absolute、relative或fixed的父元素的偏移位置。
+			2，使用position()方法时如果其所有的父元素都为默认定位（static）方式，则其处理方式和offset()一样，是当前窗口（文档）的相对偏移。
+			3，使用offset()方法不管该元素如何定位，也不管其父元素如何定位，都是获取的该元素相对于当前视口的偏移。
+			*/
+			//offset此方法只对可见元素有效
+			// $("button").click(function(){
+			// 	//获取offset
+			//     // x=$("p").offset();
+			//     // $("#span1").text(x.left);
+			//     // $("#span2").text(x.top);
+			//     //设置offset
+			//     // $("p").offset({top:100,left:0});
+			    
+			//     $("p").offset(function(index, oldVal){
+			//     	var newPos = new Object();
+			//         newPos.left = oldVal.left + 100;
+			//         newPos.top = oldVal.top + 100;
+			//         return newPos;
+			//     });
+			// });
+			
+			//position此方法只对可见元素有效。
+			//见demo3
+			
+			//scrollTop返回数值不带单位
+			// var top = 0
+			// $(".btn1").click(function() {
+			// 	// alert($("div").scrollTop());
+			// 	top += 100;
+			// 	$("div").scrollTop(top);
+			// })
+			// $(".btn1").click(function(){
+			//    $("div").scrollTop(100);
+			// });
+			// $(".btn2").click(function(){
+			//    alert($("div").scrollTop());
+			// });
+			
+			//scrollLeft返回数值不带单位,此方法对可见和隐藏元素均有效。
+			$(".btn1").click(function(){
+			   $("div").scrollLeft(100);
+			});
+			$(".btn2").click(function(){
+			   alert($("div").scrollLeft());
+			});
+			// 
+
+		})
+	</script>
+</head>
+<body>
+	<!-- offset() -->
+	<!-- <p>
+		本段落的偏移是 
+		<span id="span1"></span> left 和 <span id="span2"></span> top。
+	</p>
+	<button>获得 offset</button> -->
+
+	<!-- scrollTop scrollLeft -->
+	<div style="border:1px solid black;width:100px;height:100px;overflow:auto">
+	<!-- This is some textThis is some textThis is some text. 
+	This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. -->
+
+	dakjfkdajfkjadlkfjlkdajfkljdakfjlkajflkjadlkfjdlkajflkjalkfjdlkajflkjdalkf
+	</div>
+	<button class="btn1">btn1</button>
+	<button class="btn2">btn2</button>
+	
+</body>
+</html>

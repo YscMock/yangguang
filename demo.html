@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		body{margin: 10px;}
+		/*p{background: #f0f; margin: 10px;}*/
+	</style>
+	<script src="js/jquery-1.12.3.js"></script>
+	<script>
+		$(function() {
+			//css  一个参数  取得第一个段落的color样式属性的值。
+			// console.log($("p").css("color"));
+			//两个参数表示  设置属性  属性名,属性值
+			// $("p").css("color","#00f");
+			
+			// 设置多个属性
+			// {key: value, key: value}
+			// $("p").css({color: "#fff", background: "#000" });
+			
+			// 链式操作 返回this 能继续操作
+			// $("p").css({ color: "#ff0011", background: "blue" }).click(function() {alert($(this).text())});
+			
+			//多个单词构成的css属性，可以使用其css格式("-")或者DOM格式(驼峰式)，jQuery都能理解,建议优先以驼峰式来获取
+			// console.log($("p").css("background-color"));
+			// console.log($("p").css("backgroundColor"));
+			
+			//name,function(index, value) 逐渐增加div的大小
+			// $("p").click(function() {
+			//     $(this).css(
+			//       "height", function(index, value) {
+			//         return parseInt(value) * 2;
+			//       }
+			//     );
+			// });
+			// 
+			// {key: value, key: value}
+			$("p").click(function() {
+			    $(this).css({
+			      width: function(index, value) {
+			        return parseInt(value) * 2;
+			      }, 
+			      height: function(index, value) {
+			        return parseInt(value) * 2;
+			      }
+			    });
+			});
+		})			
+	</script>
+</head>
+<body>
+	<!-- css() -->
+	<p style="color: #000; background: #f00;">p1</p>
+	<p style="color: #000; background: #0f0;">p2</p>
+</body>
+</html>

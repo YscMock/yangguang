@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style type="text/css">
+		*{
+		  margin:0px;
+		  padding:0px;
+		}
+		.father{
+		  background-color:green;
+		  width:200px;
+		  height:200px;
+		  padding:50px;
+		  margin-bottom:50px;
+		  margin-left:100px;
+		}
+		.children{
+		  width:150px;
+		  height:150px;
+		  background-color:red;
+		  line-height:150px;
+		  text-align:center;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		  //each(fn)
+		  $(".children").each(function(){
+		   var text;
+		   text = "left:" + $(this).offset().left;
+		   text += "top:" + $(this).offset().top;
+		   $(this).text(text);
+		  })
+		})
+	</script>
+</head>
+<body>
+	<div class="father" style="position:relative">
+	  <div class="children"></div>
+	</div>
+	<div class="father">
+	  <div class="children"></div>
+	</div>
+</body>
+</html>

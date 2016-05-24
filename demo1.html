@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>width/height</title>
+	<script src="js/jquery-1.12.3.js"></script>
+	<script>
+		$(function() {
+			/*
+			对于同一个元素应该是：width()<=innerWidth()<=outerWidth()<=outerWidth(true);
+			width()方法用于获得元素宽度
+			innerWidth()方法用于获得包括内边界（padding）的元素宽度
+			outerWidth()方法用于获得包括内边界(padding)和边框(border)的元素宽度
+			outerWidth(true)包括外边框(margin)、内边界(padding)和边框(border)的元素宽度
+			*/
+			//取得都是数值不带单位
+			$(".btn1").click(function() {
+			    var obj=$("#p_obj");
+			    // alert(obj.width());
+			    // alert(obj.innerWidth());
+			    // alert(obj.outerWidth());
+			    // alert(obj.outerWidth(true));
+
+			    alert(obj.css("width"));
+			});
+			
+			//同理，innerHeight方法与outerHeight方法也是用同样的方法计算相应的高度。
+		})
+	</script>
+</head>
+<body>
+	<p id="p_obj" style="background:yellow; width:200px; padding:10px; border:10px solid blue; margin:10px;">This is a paragraph.</p>
+	<button class="btn1">输出高度</button>
+</body>
+</html>
